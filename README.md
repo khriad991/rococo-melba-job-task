@@ -32,7 +32,6 @@ This is a professional frontend job task built using modern tools and best pract
 - 🧼 Clean, maintainable, and reusable code structure
 
   [//]: # (- 🧠 **Redux Toolkit** for state management)
----
 
 ## 📁 Project Structure
 rococo-melba-job-task/
@@ -53,8 +52,6 @@ rococo-melba-job-task/
 ├── package-lock.json     # Lock file for npm (if used instead of pnpm)
 ├── .gitignore            # Ignored files in Git
 └── README.md             # You're here!
-
----
 
 ## 🛠 Tech Stack
 
