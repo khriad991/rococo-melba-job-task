@@ -51,7 +51,7 @@ const HeroSection = () => {
   return (
       <motion.div
           ref={ref}
-          className="relative sectopm-padding w-full h-[calc(100vh-60px)] bg-[#0a1022] z-10 overflow-hidden shadow-2xl"
+          className="relative mt-10 py-20 md:py-28 px-10 min-h-[400px] w-full h-[calc(100vh)] bg-[#0a1022] z-10 overflow-hidden shadow-2xl"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={containerVariants}
@@ -212,7 +212,7 @@ const HeroSection = () => {
         {/* Content */}
         <motion.div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-11 w-[90%] max-w-[1000px] mx-auto">
-          <motion.div className="mb-[30px]" variants={itemVariants}>
+          <motion.div className="mt-16" variants={itemVariants}>
             <motion.div className="w-[120px] h-[120px] mx-auto mb-[15px] relative" variants={pulseVariants}
                         initial="initial" animate="animate">
               <svg className="absolute w-full h-full filter drop-shadow-[0_0_15px_rgba(96,165,250,0.5)]"
@@ -240,7 +240,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-              className="!text-[1.728rem] !md:text-[1.728rem] !leading-normal !text-gray-white mt-[10px] mb-0 tracking-normal opacity-0 translate-y-[20px]"
+              className="!text-[1.728rem] !md:text-[1.728rem] !leading-normal !text-gray-white tracking-normal opacity-0 translate-y-[20px]"
               initial="hidden"
               animate="visible"
               exit="exit"
