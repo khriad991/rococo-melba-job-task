@@ -36,20 +36,23 @@ This is a professional frontend job task built using modern tools and best pract
 
 ## 📁 Project Structure
 rococo-melba-job-task/
-├── public/ # Static assets
+
+rococo-melba-job-task/
+├── public/               # Static assets like favicon, images
 ├── src/
-│ ├── assets/ # Static assets
-│ ├── components/ # Reusable UI components
-│ ├── layouts/ # Layout components
-│ ├── pages/ # Route-based pages
-│ ├── routes/ # App routes
-│ └── styles/ # Tailwind & global styles
-├── .eslintrc.cjs # ESLint configuration
-├── vite.config.ts # Vite config
-├── other files of package.json / index.html /pnpm-lock.yaml /pakage-lock.json / gitignore...
-└── README.md # You're here!
-
-
+│   ├── assets/           # Static images, fonts, etc.
+│   ├── components/       # Reusable UI components
+│   ├── layouts/          # Layout components (Header, Footer, etc.)
+│   ├── pages/            # Route-based pages
+│   ├── routes/           # Application routing logic
+│   └── styles/           # Tailwind & global CSS
+├── .eslintrc.cjs         # ESLint configuration
+├── vite.config.ts        # Vite configuration file
+├── package.json          # Project metadata and scripts
+├── pnpm-lock.yaml        # Lock file for pnpm
+├── package-lock.json     # Lock file for npm (if used instead of pnpm)
+├── .gitignore            # Ignored files in Git
+└── README.md             # You're here!
 
 ---
 
