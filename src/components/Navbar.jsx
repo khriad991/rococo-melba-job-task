@@ -83,16 +83,25 @@ const NavItem = ({ href, children, activeId }) => {
     const isActive = activeId === id;
 
     return (
-        <a
-            href={href}
-            className={`nav-link ${isActive ? 'text-[#60a5fa] font-bold' : ''}`}
-            onClick={(e) => {
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-            }}
-        >
-            {children}
-        </a>
+        <div className="relative group">
+            <a
+                href={href}
+                className={`nav-link relative inline-block py-2 px-1 text-white hover:text-[#60a5fa] transition-colors duration-300 ${isActive ? 'text-[#60a5fa] font-medium' : ''}`}
+                onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }}
+            >
+                {children}
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-[#60a5fa] transform origin-left transition-transform duration-300 ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+            </a>
+        </div>
     );
 };
 

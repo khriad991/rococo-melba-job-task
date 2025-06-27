@@ -66,7 +66,7 @@ const SolutionsInAction = () => {
     }, []);
 
     return (
-        <section id="solutions-in-action" className="section-padding bg-slate">
+        <section id="action" className="section-padding bg-slate">
 
             <div className=" mx-auto px-4">
                 <h2 className="section-title">See Our Solutions in Action</h2>

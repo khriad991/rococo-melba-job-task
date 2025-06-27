@@ -1,9 +1,11 @@
-import SolutionsInAction from "../componets/SolutionsInAction.jsx";
-import HeroSection from "../componets/HeroSection.jsx";
+import SolutionsInAction from "../components/SolutionsInAction.jsx";
+import HeroSection from "../components/HeroSection.jsx";
+import CaseUseCard from "../components/cards/CaseUseCard.jsx";
+import SolutionsCard from "../components/cards/SolutionsCard.jsx";
 
 
 export default function Home() {
-    const solotions = [
+    const solutionsData = [
         {
             icon: "✓",
             iconColor: "#10b981",
@@ -153,30 +155,9 @@ export default function Home() {
             {/*Our Solutions Section*/}
             <section id="solutions" className="section-padding bg-dark-blue">
                 <h1 className="section-title">Our Solutions</h1>
-                <p className={"text-center mb-6"}>
-                    Our comprehensive suite of AI-powered solutions transforms every aspect of healthcare documentation:</p>
-                <div className=" mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1200px] w-full mx-auto">
-                    {solotions.map((item, i) => (
-                        <div key={i}
-                             className={`bg-navy rounded-xl p-8 border-1 shadow-xl my-transition relative overflow-hidden hover:-translate-y-2 hover:shadow-2xl`}
-                             style={{borderTop: `3px solid ${item.borderTop}`}}
-                        >
-                            <div
-                                className={` inline-flex items-center justify-center w-[70px] h-[70px] rounded-full mb-5 my-transition text-[32px] hover:scale-110`}
-                                style={{
-                                    backgroundColor: item.iconBG,
-                                    color: item.iconColor,
-                                }}
-                            >
-                                {item.icon}
-                            </div>
-                            <h3 className="text-[1.44rem] font-semibold text-[#60a5fa] mt-0 mb-4">
-                                {item.name}
-                            </h3>
-                            <p className="text-slate-300">{item.description}</p>
-                        </div>
-                    ))}
-                </div>
+                <p className={"text-center mb-6"}>Our comprehensive suite of AI-powered solutions transforms every aspect of healthcare documentation:</p>
+                <SolutionsCard solutionsData={solutionsData}/>
+
             </section>
 
             {/* Solutions In Action Section */}
@@ -262,33 +243,7 @@ export default function Home() {
                 <h1 className={"section-title"}>Case Use</h1>
                 <p className={"text-center"}>Our comprehensive suite of AI-powered solutions transforms every aspect of
                     healthcare documentation:</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1200px] w-full mx-auto mt-8">
-                    {caseUseData.map((item, i) => (
-                        <div
-                            key={i}
-                            className="bg-[rgba(30,58,138,0.3)] rounded-xl p-8 border border-[rgba(96,165,250,0.2)] shadow-xl my-transition relative overflow-hidden hover:translate-y-[-10px] hover:shadow-2xl">
-                            <h3 className="text-[1.44rem] font-semibold text-[#60a5fa] mt-0 mb-4">
-                                {item.title}
-                            </h3>
-
-                            {/* Description */}
-                            {item.description && <p>{item.description}</p>}
-
-                            {/* Quote (HTML rendering) */}
-                            {item.quote && (
-                                <p
-                                    className="italic text-white mb-2 mt-6 pl-4 border-l-[3px] border-[rgba(96,165,250,0.3)]"
-                                    dangerouslySetInnerHTML={{__html: `"${item.quote}"`}}
-                                />
-                            )}
-
-                            {/* Author */}
-                            <p className="italic text-right text-[#94a3b8] mt-2.5 text-[0.833rem] font-medium">
-                                {item.author}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+                <CaseUseCard caseUseData={caseUseData} />
 
             </section>
 
