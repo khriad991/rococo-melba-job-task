@@ -60,10 +60,11 @@ rococo-melba-job-task/
 | React 19          | JavaScript library for building UIs    |
 | Vite 7            | Fast build tool and dev server         |
 | TailwindCSS 4     | Utility-first CSS framework            |
-| Redux Toolkit     | Global state management                |
 | Framer Motion     | Declarative animation library          |
 | React Router v7   | Declarative routing                    |
 | ESLint            | Code linting for clean structure       |
+
+[//]: # (| Redux Toolkit     | Global state management                |)
 ---
 
 ```bash 
