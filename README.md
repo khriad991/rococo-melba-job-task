@@ -1,6 +1,6 @@
 # 🌐 Rococo Melba – Front-End Job Task Submission
 
-This is a professional frontend job task built using modern tools and best practices. It showcases animated, responsive UI design with smooth user experience using **React 19**, **Vite**, **TailwindCSS**, and **Framer Motion**.
+This is a professional frontend job task built using modern tools and best practices. It showcases animated, responsive UI design with a smooth user experience using **React 19**, **Vite**, **TailwindCSS**, and **Framer Motion**.
 
 ![Screenshot](https://github.com/khriad991/rococo-melba-job-task/assets/preview-image.png) <!-- Replace with real image if available -->
 
@@ -87,7 +87,7 @@ npm run build
 
 ## 🧑‍💻 Author
 ### Kamrul Hasan
-###### 📍 Cox's Bazar, Bangladesh
+##### 📍 Cox's Bazar, Bangladesh
 
 ## 📞 Contact
 - 🟢📞 +8801533190476
