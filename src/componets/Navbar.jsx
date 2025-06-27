@@ -11,7 +11,7 @@ const Navbar = ({ activeId }) => {
         <nav className="bg-dark-blue w-full fixed top-0 left-0 right-0 z-50">
             <div className="container">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex gap-x-1 md:justify-between h-16">
+                    <div className="flex gap-x-1 md:justify-between py-2.5">
                         <div className="flex items-center">
                             <a href="/about" className="flex items-center ">
                                 <div className="flex items-center">
@@ -45,7 +45,7 @@ const Navbar = ({ activeId }) => {
                         </div>
 
                         {/* Mobile menu button */}
-                        <div className="md:hidden flex items-center ml-auto">
+                        <div className="md:hidden flex items-center ">
                             <button
                                 type="button"
                                 className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none"

@@ -58,46 +58,130 @@ const HeroSection = () => {
       >
 
 
-        <div className="absolute inset-0 pointer-events-none z-0 max-w-[1000px] mx-auto">
-          {[...Array(150)].map((_, i) => {
-            const size = 4;
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const isTriple = i % 15 === 0;
-            const isConnected = i % 10 === 0;
-            const opacity = i % 4 === 0 ? "opacity-50" : "opacity-75";
+        <div className="absolute inset-0 pointer-events-none z-0 max-w-[1200px] mx-auto overflow-hidden">
+          {[...Array(120)].map((_, i) => {
+            const size = 2 + Math.random() * 3; // Varying sizes
+            const x = 5 + Math.random() * 90; // Keep away from edges
+            const y = 5 + Math.random() * 90;
+            const isTriple = i % 12 === 0;
+            const isConnected = i % 8 === 0;
+            const opacity = 0.3 + Math.random() * 0.7;
+            const animationDuration = 8 + Math.random() * 5;
+            const delay = Math.random() * 2;
+            const distance = 5 + Math.random() * 15;
+            
+            // Create some clusters
+            const cluster = i % 3 === 0 ? i % 5 : 0;
+            const clusterOffset = cluster > 0 ? {
+              x: (Math.random() - 0.5) * 20,
+              y: (Math.random() - 0.5) * 20
+            } : { x: 0, y: 0 };
 
             return (
-                <motion.div
-                    key={i}
-                    className={`absolute rounded-full bg-[#60a5fa] ${opacity}`}
-                    style={{
-                      width: `${size}px`,
-                      height: `${size}px`,
-                      top: `${y}%`,
-                      left: `${x}%`,
-                    }}
-                    animate={{
-                      y: [0, (i % 2 === 0 ? -10 : 10), 0],
-                      x: isTriple ? [0, 5, -5, 0] : 0,
+              <motion.div
+                key={`dot-${i}`}
+                className={`absolute rounded-full bg-gradient-to-br from-blue-400 to-blue-600`}
+                style={{
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  top: `${y}%`,
+                  left: `${x}%`,
+                  opacity: opacity,
+                  boxShadow: `0 0 ${size * 2}px ${size / 2}px rgba(96, 165, 250, ${opacity * 0.5})`,
+                  zIndex: Math.floor(opacity * 10),
+                  transform: 'translateZ(0)' // Force GPU acceleration
+                }}
+                initial={{
+                  scale: 0.5,
+                  opacity: 0
+                }}
+                animate={{
+                  y: [
+                    0, 
+                    (i % 2 === 0 ? -distance : distance) + clusterOffset.y,
+                    (i % 3 === 0 ? -distance/2 : distance/2) + clusterOffset.y,
+                    0
+                  ],
+                  x: [
+                    0,
+                    (isTriple ? distance/2 : -distance/3) + clusterOffset.x,
+                    (isTriple ? -distance/2 : distance/3) + clusterOffset.x,
+                    0
+                  ],
+                  scale: [0.8, 1, 1.1, 1],
+                  opacity: [0, opacity * 0.8, opacity, opacity * 0.9]
+                }}
+                transition={{
+                  duration: animationDuration,
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                  ease: 'easeInOut',
+                  delay: delay,
+                  times: [0, 0.3, 0.7, 1]
+                }}
+              >
+                {/* Connection lines */}
+                {isConnected && (
+                  <motion.div 
+                    className="absolute left-1/2 top-1/2 h-[1px] bg-gradient-to-r from-blue-400/50 to-transparent"
+                    initial={{ width: 0 }}
+                    animate={{ 
+                      width: `${20 + Math.random() * 30}px`,
+                      opacity: [0.4, 0.8, 0.4]
                     }}
                     transition={{
-                      duration: 3 + Math.random() * 2,
+                      duration: animationDuration * 0.8,
                       repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.05,
+                      repeatType: 'reverse',
+                      delay: delay * 1.1
                     }}
-                >
-                  {isConnected && (
-                      <div className="absolute left-full top-1/2 w-[20px] h-[1px] bg-[#60a5fa] opacity-50"/>
-                  )}
-                  {isTriple && (
-                      <>
-                        <div className="absolute left-full top-0 w-[25px] h-[1px] bg-[#60a5fa] opacity-50"/>
-                        <div className="absolute left-full bottom-0 w-[25px] h-[1px] bg-[#60a5fa] opacity-75"/>
-                      </>
-                  )}
-                </motion.div>
+                    style={{
+                      transformOrigin: 'left center',
+                      rotate: `${Math.random() * 360}deg`
+                    }}
+                  />
+                )}
+                {isTriple && (
+                  <>
+                    <motion.div 
+                      className="absolute left-1/2 top-1/2 h-[1px] bg-gradient-to-r from-blue-400/30 to-transparent"
+                      initial={{ width: 0 }}
+                      animate={{ 
+                        width: `${15 + Math.random() * 25}px`,
+                        opacity: [0.2, 0.6, 0.2]
+                      }}
+                      transition={{
+                        duration: animationDuration * 0.9,
+                        repeat: Infinity,
+                        repeatType: 'reverse',
+                        delay: delay * 1.2
+                      }}
+                      style={{
+                        transformOrigin: 'left center',
+                        rotate: `${30 + Math.random() * 30}deg`
+                      }}
+                    />
+                    <motion.div 
+                      className="absolute left-1/2 top-1/2 h-[1px] bg-gradient-to-r from-blue-400/30 to-transparent"
+                      initial={{ width: 0 }}
+                      animate={{ 
+                        width: `${15 + Math.random() * 25}px`,
+                        opacity: [0.2, 0.6, 0.2]
+                      }}
+                      transition={{
+                        duration: animationDuration * 0.85,
+                        repeat: Infinity,
+                        repeatType: 'reverse',
+                        delay: delay * 1.4
+                      }}
+                      style={{
+                        transformOrigin: 'left center',
+                        rotate: `${-30 - Math.random() * 30}deg`
+                      }}
+                    />
+                  </>
+                )}
+              </motion.div>
             );
           })}
         </div>
