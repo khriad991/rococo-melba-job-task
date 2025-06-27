@@ -86,10 +86,9 @@ npm run build
 ```
 
 ## 🧑‍💻 Author
-- **Kamrul Hasan**
-
+ **Kamrul Hasan**
 ## 📍 Location
-- Cox's Bazar, Bangladesh
+ Cox's Bazar, Bangladesh
 
 ## 📞 Contact
 - 🟢📞 +8801533190476
