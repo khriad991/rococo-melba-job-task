@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+
+@theme {
+    /*--color-*: initial;*/
+    --color-white: #fff;
+    --color-gray-white: rgb(159, 173, 192);
+    --color-black: #000;
+    --color-dark-blue: #0F172A;
+    --color-slate: #1E293B;
+    --color-blue: #2D6FEF;
+    --color-title: #60a5fa;
+    --color-midnight: #0A1023;
+    --color-navy: #132247;
+    /* breakpoints */
+    --brackpoint-sm: 768px;
+    --brackpoint-md: 1024px;
+    --brackpoint-lg: 1280px;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 1rem;
+    font-family: Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+}
+
+p {
+    @apply text-white leading-[1.5rem];
+}
+.section-padding{
+    @apply py-12 md:py-24 px-10 min-h-[400px] ;
+}
+.section-title {
+    @apply capitalize text-[#60a5fa] relative text-[2.074rem] font-bold transition-colors duration-200 text-center tracking-tight mb-8;
+}
+.my-transition{
+    @apply transition-all duration-500 ease-in-out;
+}
+.card-title {
+    @apply text-[1.728rem] font-semibold text-[#60a5fa] border-b border-[rgba(96,165,250,0.3)] ;
+}
+
+
+/* Navbar link hover effect */
+
+.nav-link {
+    @apply relative px-3 py-2 text-sm font-medium text-gray-300 transition-colors duration-200;
+    cursor: pointer;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-[#60a5fa] transition-all duration-300;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.active::after {
+    @apply w-full;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    @apply text-white;
+}
+
+/* Mobile nav link - hide hover effect on mobile */
+@media (max-width: 767px) {
+    .nav-link::after {
+        display: none;
+    }
+}
+
+/* Mobile nav link */
+.mobile-nav-link {
+    @apply block px-4 py-3 text-base font-medium transition-colors duration-200 md:hidden;
+    color: var(--color-gray-white);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    @apply text-white;
+}
+
+
+/* Slider styles */
+.slider-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #3b82f6;
+    cursor: col-resize;
+    z-index: 10;
+    touch-action: none;
+}
+
+.slider-handle:hover {
+    background-color: #60a5fa;
+}
+
+.slider-handle:active {
+    background-color: #eb2553;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a202c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+/* Prose overrides for markdown content */
+.prose {
+    color: inherit;
+}
+
+.prose h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    color: #93c5fd;
+}
+
+.prose ul {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-left: 1.5em;
+}
+
+.prose p {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
