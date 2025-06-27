@@ -1,6 +1,6 @@
 # 🌐 Rococo Melba – Front-End Job Task Submission
 
-This is a professional frontend job task built using modern tools and best practices. It showcases animated, responsive UI design with smooth user experience using **React 19**, **Vite**, **TailwindCSS**, and **Framer Motion**.
+This is a professional frontend job task built using modern tools and best practices. It showcases animated, responsive UI design with a smooth user experience using **React 19**, **Vite**, **TailwindCSS**, and **Framer Motion**.
 
 ![Screenshot](https://github.com/khriad991/rococo-melba-job-task/assets/preview-image.png) <!-- Replace with real image if available -->
 
@@ -32,26 +32,26 @@ This is a professional frontend job task built using modern tools and best pract
 - 🧼 Clean, maintainable, and reusable code structure
 
   [//]: # (- 🧠 **Redux Toolkit** for state management)
----
 
 ## 📁 Project Structure
+```text
 rococo-melba-job-task/
-├── public/ # Static assets
+├── public/               # Static assets like favicon, images
 ├── src/
-│ ├── assets/ # Static assets
-│ ├── components/ # Reusable UI components
-│ ├── layouts/ # Layout components
-│ ├── pages/ # Route-based pages
-│ ├── routes/ # App routes
-│ └── styles/ # Tailwind & global styles
-├── .eslintrc.cjs # ESLint configuration
-├── vite.config.ts # Vite config
-├── other files of package.json / index.html /pnpm-lock.yaml /pakage-lock.json / gitignore...
-└── README.md # You're here!
-
-
-
----
+│   ├── assets/           # Static images, fonts, etc.
+│   ├── components/       # Reusable UI components
+│   ├── layouts/          # Layout components (Header, Footer, etc.)
+│   ├── pages/            # Route-based pages
+│   ├── routes/           # Application routing logic
+│   └── styles/           # Tailwind & global CSS
+├── .eslintrc.cjs         # ESLint configuration
+├── vite.config.ts        # Vite configuration file
+├── package.json          # Project metadata and scripts
+├── pnpm-lock.yaml        # Lock file for pnpm
+├── package-lock.json     # Lock file for npm (if used instead of pnpm)
+├── .gitignore            # Ignored files in Git
+└── README.md             # You're here!
+```
 
 ## 🛠 Tech Stack
 
@@ -86,10 +86,8 @@ npm run build
 ```
 
 ## 🧑‍💻 Author
-- **Kamrul Hasan**
-
-## 📍 Location
-- Cox's Bazar, Bangladesh
+### Kamrul Hasan
+##### 📍 Cox's Bazar, Bangladesh
 
 ## 📞 Contact
 - 🟢📞 +8801533190476
